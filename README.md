@@ -1,8 +1,8 @@
-# Yasmim Markets — XAU/USD para iniciantes
+# Yasmim Markets
 
-Aplicação em React, TypeScript e Vite para acompanhar uma cotação indicativa do ouro, consultar manchetes e aprender os conceitos básicos de Forex/XAUUSD e MetaTrader 5.
+Painel educacional sobre XAU/USD e MetaTrader 5, feito com **React 19, TypeScript, Vite 8, Tailwind CSS 4, React Router, TanStack Query e Radix UI**. A interface usa componentes reutilizáveis e uma paleta branca monocromática.
 
-## Rodar localmente
+## Executar localmente
 
 ```bash
 npm install
@@ -16,16 +16,17 @@ npm run build
 npm run preview
 ```
 
-## Fontes de dados
+## Estrutura
 
-- **Preço indicativo XAU/USD:** endpoint público `https://api.gold-api.com/price/XAU`, consultado a cada 60 segundos. Não é necessariamente o preço executável da corretora e não há garantia de disponibilidade ou latência.
-- **Manchetes:** feed RSS do Google News consultado via RSS2JSON, renovado a cada 15 minutos. O feed pode ficar indisponível, limitar requisições ou apresentar manchetes em idiomas diferentes.
-- **Gráfico:** widget incorporado do TradingView com o símbolo OANDA:XAUUSD. Pode usar um feed diferente do broker do usuário.
+- `src/pages`: visão geral, notícias e academia.
+- `src/components`: layout, cards de mercado, feed e calculadora.
+- `src/services` e `src/hooks`: acesso às APIs e atualização/cache dos dados.
+- `src/data` e `src/types`: trilha didática e contratos TypeScript.
 
-## Observação sobre a análise semanal
+## Fontes externas
 
-O painel faz uma classificação simples de palavras presentes nas manchetes, para organizar temas que merecem atenção. Ele **não** prevê uma cotação futura, não interpreta um calendário econômico ao vivo e não gera recomendações de compra/venda. A classificação pode errar contexto, ironia, manchetes antigas ou traduções. A calculadora de posição é educativa e deve ser ajustada às especificações do contrato da corretora.
+- **Cotação indicativa do ouro:** `https://api.gold-api.com/price/XAU`, atualizada a cada 60 segundos.
+- **Manchetes:** Google News RSS convertido pelo RSS2JSON, atualizado a cada 15 minutos.
+- **Gráfico:** widget TradingView no símbolo OANDA:XAUUSD.
 
-## Deploy
-
-Projeto estático compatível com Vercel, Netlify e GitHub Pages (configurar base path caso publique em subdiretório).
+As fontes podem ter indisponibilidade, atraso ou diferir da cotação e das condições da corretora. O resumo semanal organiza palavras-chave encontradas nas manchetes; não é uma previsão numérica, análise fundamental completa ou recomendação de compra/venda. A calculadora é educativa e usa premissas simplificadas: confirme tamanho do contrato, tick e lote mínimo no MT5 da sua corretora.
