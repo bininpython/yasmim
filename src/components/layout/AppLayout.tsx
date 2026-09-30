@@ -16,7 +16,7 @@ export function AppLayout() {
     <aside className={`sidebar ${menuOpen ? 'sidebar-open' : ''}`}>
       <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
         <span className="brand-symbol"><Sparkles size={18} strokeWidth={1.8} /></span>
-        <span><b>YASMIM</b><small>MARKETS · ACADEMY</small></span>
+        <span><b>GOLD SCHOOL</b><small>XAU/USD · ACADEMY</small></span>
       </NavLink>
       <div className="side-label">ESPAÇO DE APRENDIZADO</div>
       <nav className="primary-nav" aria-label="Navegação principal">
@@ -26,16 +26,16 @@ export function AppLayout() {
       </nav>
       <div className="sidebar-bottom">
         <div className="sidebar-note"><span className="sidebar-note-icon"><BookOpen size={16}/></span><b>Aprenda antes de operar</b><p>Comece pelos fundamentos e pratique em uma conta demo.</p><NavLink to="/academia" onClick={() => setMenuOpen(false)}>Abrir trilha <ArrowUpRight size={14}/></NavLink></div>
-        <div className="sidebar-footer"><span className="avatar">YM</span><span><b>Yasmim Markets</b><small>Guia para iniciantes</small></span></div>
+        <div className="sidebar-footer"><span className="avatar">GS</span><span><b>Gold School</b><small>Guia para iniciantes</small></span></div>
       </div>
     </aside>
     <main className="main-area">
       <header className="topbar">
         <button className="menu-toggle" aria-label="Abrir navegação" onClick={() => setMenuOpen(true)}><Menu size={20}/></button>
         <div className="breadcrumb"><span>Mercados</span><span className="breadcrumb-separator">/</span><b>XAU/USD</b></div>
-        <div className="topbar-right"><span className="market-status"><i/> Monitoramento informativo</span><span className="avatar top-avatar">YM</span></div>
+        <div className="topbar-right"><span className="market-status"><i/> Monitoramento informativo</span><span className="avatar top-avatar">GS</span></div>
       </header>
-      <div className="page-container"><Outlet/><footer className="site-footer"><span>© {new Date().getFullYear()} Yasmim Markets</span><span>Conteúdo educativo para decisões conscientes</span><a href="https://github.com/bininpython/yasmim" target="_blank" rel="noreferrer"><LineChart size={13}/> Projeto open source</a></footer></div>
+      <div className="page-container"><Outlet/><footer className="site-footer"><span>© {new Date().getFullYear()} Gold School</span><span>Conteúdo educativo para decisões conscientes</span><a href="https://github.com/bininpython/yasmim" target="_blank" rel="noreferrer"><LineChart size={13}/> Projeto open source</a></footer></div>
     </main>
   </div>
 }

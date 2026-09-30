@@ -1,4 +1,4 @@
-# Yasmim Markets
+# Gold School
 
 Painel educacional sobre XAU/USD e MetaTrader 5, feito com **React 19, TypeScript, Vite 8, Tailwind CSS 4, React Router, TanStack Query e Radix UI**. A interface usa componentes reutilizáveis e uma paleta branca monocromática.
 
